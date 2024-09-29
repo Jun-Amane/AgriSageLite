@@ -51,11 +51,12 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
                 } else {
                         document.title = 'Classification';
                 }
+                fetchSessionId();
         }, [classificationType]);
 
         const fetchSessionId = async () => {
                 try {
-                        const response = await fetch('http://127.0.0.1:5000/api/get_session_id', {
+                        const response = await fetch('http://127.0.0.1:15532/api/get_session_id', {
                                 credentials: 'include'
                         });
                         if (!response.ok) {
@@ -72,7 +73,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
 
         const fetchCaptcha = async () => {
                 try {
-                        const response = await fetch('http://127.0.0.1:5000/api/captcha', {
+                        const response = await fetch('http://127.0.0.1:15532/api/captcha', {
                                 credentials: 'include'
                         });
                         if (!response.ok) {
@@ -108,7 +109,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
                 }
 
                 try {
-                        const response = await fetch('http://127.0.0.1:5000/api/classify', {
+                        const response = await fetch('http://127.0.0.1:15532/api/classify', {
                                 method: 'POST',
                                 body: formData,
                                 credentials: 'include'

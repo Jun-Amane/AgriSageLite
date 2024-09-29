@@ -1,16 +1,13 @@
 import secrets
 import uuid
-
-from flask import Flask, jsonify, request, send_file, session
+from flask import Flask, jsonify, request, send_file, session, make_response
 from flask_cors import CORS
-
 from captcha_module import CaptchaModule
 from data_processing import process_input_data
 from knowledge_module import KnowledgeModule
 from predict import ClassificationModule
 
 app = Flask(__name__)
-# app.skkecret_key = "your_secret_key_here"j
 app.secret_key = secrets.token_hex(16)
 CORS(app, supports_credentials=True)
 
@@ -23,7 +20,11 @@ captcha_module = CaptchaModule()
 def get_session_id():
     if "session_id" not in session:
         session["session_id"] = str(uuid.uuid4())
-    return jsonify({"session_id": session["session_id"]})
+
+    print("Session after setting session_id:", session)
+    response = make_response(jsonify({"session_id": session["session_id"]}))
+    response.set_cookie('session_id', session["session_id"], httponly=True, secure=True, samesite='None')
+    return response
 
 
 @app.route("/api/captcha", methods=["GET"])
@@ -31,17 +32,29 @@ def get_captcha():
     if "session_id" not in session:
         session["session_id"] = str(uuid.uuid4())
 
+    print("Session in get_captcha:", session)
     image_bytes, _ = captcha_module.generate_captcha(session["session_id"])
-    return send_file(image_bytes, mimetype="image/png")
+    response = make_response(send_file(image_bytes, mimetype="image/png"))
+    response.set_cookie('session_id', session["session_id"], httponly=True, secure=True, samesite='None')
+    return response
 
 
 @app.route("/api/classify", methods=["POST"])
 def classify():
+    print("Session at the start of classify:", session)
+    print("Cookies received:", request.cookies)
+
+    session_id = request.cookies.get('session_id')
+    if not session_id:
+        return jsonify({"error": "No valid session. Please refresh the page."}), 400
+
+    if "session_id" not in session:
+        session["session_id"] = session_id
+
     if (
-        "image" not in request.files
-        or "description" not in request.form
-        or "captcha" not in request.form
-        or "session_id" not in session
+            "image" not in request.files
+            or "description" not in request.form
+            or "captcha" not in request.form
     ):
         return jsonify({"error": "Missing required fields"}), 400
 
@@ -72,10 +85,12 @@ def classify():
     return jsonify(result)
 
 
-@app.before_request
-def before_request():
-    captcha_module.cleanup()
+@app.after_request
+def add_header(response):
+    if "session_id" in session:
+        response.set_cookie('session_id', session["session_id"], httponly=True, secure=True, samesite='None')
+    return response
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=15532)
