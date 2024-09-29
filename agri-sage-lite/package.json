@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 40331",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   },

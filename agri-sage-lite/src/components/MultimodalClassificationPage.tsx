@@ -56,7 +56,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
 
         const fetchSessionId = async () => {
                 try {
-                        const response = await fetch('http://127.0.0.1:15532/api/get_session_id', {
+                        const response = await fetch('/api/get_session_id', {
                                 credentials: 'include'
                         });
                         if (!response.ok) {
@@ -73,7 +73,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
 
         const fetchCaptcha = async () => {
                 try {
-                        const response = await fetch('http://127.0.0.1:15532/api/captcha', {
+                        const response = await fetch('/api/captcha', {
                                 credentials: 'include'
                         });
                         if (!response.ok) {
@@ -109,7 +109,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
                 }
 
                 try {
-                        const response = await fetch('http://127.0.0.1:15532/api/classify', {
+                        const response = await fetch('/api/classify', {
                                 method: 'POST',
                                 body: formData,
                                 credentials: 'include'

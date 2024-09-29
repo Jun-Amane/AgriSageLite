@@ -1,47 +1,68 @@
-# import mysql.connector
-# from mysql.connector import Error
+from sqlalchemy import create_engine, Column, String, Text
+from sqlalchemy.orm import sessionmaker, declarative_base
+from contextlib import contextmanager
 
-from config import DB_CONFIG
+Base = declarative_base()
+
+
+class Birds(Base):
+    __tablename__ = 'birds'
+    key = Column(String(255), primary_key=True)
+    desc = Column(Text)
+
+
+class Flowers(Base):
+    __tablename__ = 'flowers'
+    key = Column(String(255), primary_key=True)
+    desc = Column(Text)
+
+
+class Wheat(Base):
+    __tablename__ = 'wheat'
+    key = Column(String(255), primary_key=True)
+    desc = Column(Text)
+    prev = Column(Text)
 
 
 class KnowledgeModule:
     def __init__(self):
-        self.connection = None
-        # try:
-        #     self.connection = mysql.connector.connect(**DB_CONFIG)
-        # except OSError as e:
-        #     print(f"Error connecting to MySQL database: {e}")
-        #
+        db_url = "mysql+pymysql://jun-amane:stochastic@localhost/agri_sage_lite"
+        self.engine = create_engine(db_url)
+        self.Session = sessionmaker(bind=self.engine)
+
+    @contextmanager
+    def session_scope(self):
+        session = self.Session()
+        try:
+            yield session
+            session.commit()
+        except:
+            session.rollback()
+            raise
+        finally:
+            session.close()
 
     def get_knowledge(self, category, type_name):
-        # if not self.connection or not self.connection.is_connected():
-        #     try:
-        #         self.connection = mysql.connector.connect(**DB_CONFIG)
-        #     except Error as e:
-        #         print(f"Error reconnecting to MySQL database: {e}")
-        #         return None
-        #
-        # try:
-        #     cursor = self.connection.cursor(dictionary=True)
-        #     query = """
-        #     SELECT knowledge_content
-        #     FROM agricultural_knowledge
-        #     WHERE category = %s AND type = %s
-        #     """
-        #     cursor.execute(query, (category, type_name))
-        #     result = cursor.fetchone()
-        #     cursor.close()
-        #
-        #     if result:
-        #         return result["knowledge_content"]
-        #     else:
-        #         return "No specific knowledge found for this category."
-        # except Error as e:
-        #     print(f"Error retrieving knowledge from database: {e}")
-        #     return None
-        #
-        return {"f1": "fake knowledge"}
+        with self.session_scope() as session:
+            if category == "bird":
+                result = session.query(Birds).filter(Birds.key == type_name).first()
+                if result:
+                    return {"简介": result.desc}
+            elif category == "flower":
+                result = session.query(Flowers).filter(Flowers.key == type_name).first()
+                if result:
+                    return {"简介": result.desc}
+            elif category == "disease":
+                result = session.query(Wheat).filter(Wheat.key == type_name).first()
+                if result:
+                    return {"简介": result.desc, "防治措施": result.prev}
+            else:
+                return {"error": "Invalid category"}
 
-    def __del__(self):
-        if self.connection and self.connection.is_connected():
-            self.connection.close()
+            return {"error": "No specific knowledge found for this category and type."}
+
+
+# Example usage
+if __name__ == "__main__":
+    km = KnowledgeModule()
+    print(km.get_knowledge("wheat", "Wheat Loose Smut"))

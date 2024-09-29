@@ -103,7 +103,8 @@ class CUBModelStrategy(BaseModelStrategy):
     def __init__(self):
         super().__init__(
             "data/277958f85d68cc4d902fe1865be8859d2fc44793.jit.pt",
-            "data/2aaf5ff3fca8aa3422fe5d98cbe72ce2f43233f1.pkl",
+            # "data/2aaf5ff3fca8aa3422fe5d98cbe72ce2f43233f1.pkl",
+            "data/new.pkl"
         )
 
 

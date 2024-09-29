@@ -1,5 +1,5 @@
 data/*.jit.pt
-
+.idea/
 __pycache__
 
 

@@ -77,7 +77,7 @@ def classify():
 
     # Check if succeed & append knowledge
     if result["status"] == "success":
-        knowledge = knowledge_module.get_knowledge(result["top_category"], type_name)
+        knowledge = knowledge_module.get_knowledge(type_name, result["top_category"])
         if knowledge:
             result["agricultural_knowledge"] = knowledge
 
@@ -88,9 +88,11 @@ def classify():
 @app.after_request
 def add_header(response):
     if "session_id" in session:
-        response.set_cookie('session_id', session["session_id"], httponly=True, secure=True, samesite='None')
+        # response.set_cookie('session_id', session["session_id"], httponly=True, secure=False, samesite='None')
+        response.set_cookie('session_id', session["session_id"], httponly=True, secure=False)
+
     return response
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=15532)
+    app.run(debug=True, port=40332)
