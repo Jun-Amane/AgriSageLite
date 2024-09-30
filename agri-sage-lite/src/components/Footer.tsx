@@ -16,7 +16,7 @@ function Copyright() {
     return (
         <div>
             <Typography variant="body2" sx={{color: 'text.secondary', mt: 1}}>
-                {'Copyright © AgriSageLite Committee '}
+                {'Copyright © AgriSageLite Committee (SOS团) '}
                 {new Date().getFullYear()}
                 {'. Designed by Ziyu Zhou in Tai\'an'}
             </Typography>
