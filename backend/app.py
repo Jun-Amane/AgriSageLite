@@ -7,6 +7,8 @@ from data_processing import process_input_data
 from knowledge_module import KnowledgeModule
 from predict import ClassificationModule
 
+from app_agkg import *
+
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 CORS(app, supports_credentials=True)
@@ -83,6 +85,30 @@ def classify():
 
     print(result)
     return jsonify(result)
+
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    try:
+        data = request.json
+        if not data or 'message' not in data:
+            return jsonify({"error": "Invalid request. 'message' is required."}), 400
+
+        sent = data['message']
+        response = question_deal(sent)
+
+        return jsonify({
+            "status": "success",
+            "response": response,
+            "timestamp": int(time.time())
+        })
+
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "error": str(e),
+            "timestamp": int(time.time())
+        }), 500
 
 
 @app.after_request

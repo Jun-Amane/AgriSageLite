@@ -1,5 +1,17 @@
 data/*.jit.pt
 .idea/
 __pycache__
+MyWeb
 
 
+util.py
+SQLiteTools.py
+NeoUtil.py
+CosSimilarity.py
+model
+static
+templates
+layers
+data/agis
+app_agkg.py
+predict_agkg.py
