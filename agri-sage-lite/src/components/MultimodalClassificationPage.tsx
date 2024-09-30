@@ -312,7 +312,7 @@ const MultimodalClassificationPage: React.FC<MultimodalClassificationPageProps> 
                                         disabled={isLoading}
                                         fullWidth
                                     >
-                                        {isLoading ? <CircularProgress size={24}/> : 'Classify'}
+                                        {isLoading ? <CircularProgress size={24}/> : '开始检测'}
                                     </Button>
                                 </form>
                             </CardContent>
