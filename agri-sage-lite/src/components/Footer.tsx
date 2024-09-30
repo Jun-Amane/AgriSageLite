@@ -22,6 +22,9 @@ function Copyright() {
             </Typography>
 
             <Typography variant="body2" sx={{color: 'text.secondary', mt: 1}}>
+                项目是在指导老师国家自然科学基金（32401702）、山东省自然科学基金（ZR2023QF016）大力支持下开展。
+            </Typography>
+            <Typography variant="body2" sx={{color: 'text.secondary', mt: 1}}>
                 {'A part of '}
                 <Link color="text.secondary" href="https://github.com/Jun-Amane/AgriSageLite">
                     AgriSageLite

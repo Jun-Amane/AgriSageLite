@@ -142,10 +142,7 @@ export default function AboutPage() {
                                     研究团队
                                 </Typography>
                                 <Typography variant="body1" color="text.secondary" sx={{textIndent: '2em'}}>
-                                    AgriSageLite项目由山东农业大学信息科学与工程学院的优秀本科生团队开发。作为新一代农业信息化人才，团队成员在计算机科学与农业科技融合领域展现出卓越的创新能力和研究热情。
-                                </Typography>
-                                <Typography variant="body1" color="text.secondary" sx={{textIndent: '2em'}}>
-                                    团队成员擅长将先进的计算机技术，如机器学习、计算机视觉和自然语言处理等，创造性地应用于农业生产的各个环节。我们的研究不仅注重技术创新，更致力于解决农业生产中的实际问题，推动农业现代化和智能化发展。
+                                    AgriSageLite项目由山东农业大学信息科学与工程学院的优秀本科生团队开发。团队成员研究方向有机器学习、计算机视觉和自然语言处理等，在计算机科学与农业科技融合领域展现出卓越的创新能力和研究热情，且分工明确。该项目是在指导老师国家自然科学基金（32401702）、山东省自然科学基金（ZR2023QF016）大力支持下开展。团队研究不仅注重技术创新，更致力于解决农业生产中的实际问题，推动农业现代化和智能化发展。
                                 </Typography>
                             </CardContent>
                         </Card>
