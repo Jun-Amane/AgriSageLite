@@ -62,7 +62,7 @@ export default function ContactPage() {
                                                                 <Box sx={{ display: 'flex', mb: 2 }}>
                                                                         <Avatar
                                                                                 alt="Avatar"
-                                                                                src="/static/avatar/jun.png"
+                                                                                src="/static/avatar/jun.webp"
                                                                                 sx={{ width: 80, height: 80 }}
                                                                         />
                                                                 </Box>

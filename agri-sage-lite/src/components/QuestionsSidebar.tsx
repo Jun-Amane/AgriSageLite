@@ -23,15 +23,15 @@ interface QuestionsSidebarProps {
 
 const sampleQuestions: QuestionCategory[] = [
         {
-                category: "Wheat Diseases",
+                category: "小麦病虫害",
                 questions: [
-                        "What are the symptoms of wheat rust?",
-                        "How to prevent wheat blight?",
-                        "Is my wheat affected by fusarium head blight?"
+                        "小麦易感哪些病害？",
+                        "小麦赤霉病的症状是什么？",
+                        "如何防治小麦吸浆虫？",
                 ]
         },
         {
-                category: "Flower Identification",
+                category: "桃树病虫害",
                 questions: [
                         "How to identify a sunflower?",
                         "What are the characteristics of a rose?",
@@ -39,7 +39,7 @@ const sampleQuestions: QuestionCategory[] = [
                 ]
         },
         {
-                category: "Bird Species",
+                category: "其它示例",
                 questions: [
                         "What does a barn swallow look like?",
                         "How to distinguish between a crow and a raven?",
@@ -62,7 +62,7 @@ const QuestionsSidebar: React.FC<QuestionsSidebarProps> = ({ onQuestionClick }) 
                         }}
                 >
                         <Typography variant="h6" sx={{ p: 2, textAlign: 'center' }}>
-                                Sample Questions
+                                样例问题
                         </Typography>
                         <List>
                                 {sampleQuestions.map((category, index) => (

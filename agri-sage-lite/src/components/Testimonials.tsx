@@ -10,35 +10,35 @@ import Grid from '@mui/material/Grid';
 
 const teamMembers = [
         {
-                avatar: <Avatar alt="Ziyu Zhou" src="/static/avatar/jun.png" />,
+                avatar: <Avatar alt="Ziyu Zhou" src="/static/avatar/jun.webp" />,
                 name: 'Ziyu Zhou',
                 occupation: 'AI开发、系统构建、运行维护',
                 descriptions:
                         "TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO"
         },
         {
-                avatar: <Avatar alt="Guangye Li" src="/static/avatar/gy.jpeg" />,
+                avatar: <Avatar alt="Guangye Li" src="/static/avatar/gy.webp" />,
                 name: 'Guangye Li',
                 occupation: '大数据挖掘与分析',
                 descriptions:
                         "TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO"
         },
         {
-                avatar: <Avatar alt="Yang Song" src="/static/avatar/sheep.jpeg" />,
+                avatar: <Avatar alt="Yang Song" src="/static/avatar/sheep.webp" />,
                 name: 'Yang Song',
                 occupation: '大数据挖掘与分析',
                 descriptions:
                         "TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO"
         },
         {
-                avatar: <Avatar alt="Wenqiang Chen" src="/static/avatar/wq.jpeg" />,
+                avatar: <Avatar alt="Wenqiang Chen" src="/static/avatar/wq.webp" />,
                 name: 'Wenqiang Chen',
                 occupation: '嵌入式系统开发',
                 descriptions:
                         "TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO"
         },
         {
-                avatar: <Avatar alt="Jiahui Zhou" src="/static/avatar/chuck.jpeg" />,
+                avatar: <Avatar alt="Jiahui Zhou" src="/static/avatar/chuck.webp" />,
                 name: 'Jiahui Zhou',
                 occupation: '植物表型学大数据研究',
                 descriptions:

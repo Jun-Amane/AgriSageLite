@@ -15,22 +15,22 @@ const items = [
                 icon: <Avatar src="/static/features/wheat.png" alt="小麦病虫害识别" sx={{ width: 24, height: 24 }} />,
                 title: '智能小麦病虫害诊断',
                 description: '利用先进的图像识别技术，快速准确地识别和诊断小麦病虫害，为农户提供及时的防治建议，有效提高作物产量和质量。',
-                imageLight: 'url("/static/IMG_1824.png")',
-                imageDark: 'url("/static/IMG_1824.png")',
+                imageLight: 'url("/static/IMG_1824.webp")',
+                imageDark: 'url("/static/IMG_1824.webp")',
         },
         {
                 icon: <Avatar src="/static/features/flower.png" alt="花卉品种识别" sx={{ width: 24, height: 24 }} />,
                 title: '精准花卉品种鉴定',
                 description: '融合图像分析和深度学习算法，实现快速、准确的花卉品种识别，助力园艺爱好者和专业人士更好地了解和管理植物。',
-                imageLight: 'url("/static/IMG_1454.JPG")',
-                imageDark: 'url("/static/IMG_1454.JPG")',
+                imageLight: 'url("/static/IMG_1454.webp")',
+                imageDark: 'url("/static/IMG_1454.webp")',
         },
         {
                 icon: <Avatar src="/static/features/bird.png" alt="鸟类物种识别" sx={{ width: 24, height: 24 }} />,
                 title: '高效鸟类物种识别',
                 description: '结合多模态分析技术，精确识别各种鸟类物种，为生态研究、野生动物保护和观鸟爱好者提供专业的辅助工具。',
-                imageLight: 'url("/static/Indigo_Bunting_0002_12163.jpg")',
-                imageDark: 'url("/static/Indigo_Bunting_0002_12163.jpg")',
+                imageLight: 'url("/static/Indigo_Bunting_0002_12163.webp")',
+                imageDark: 'url("/static/Indigo_Bunting_0002_12163.webp")',
         },
 ];
 
