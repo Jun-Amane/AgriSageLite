@@ -33,17 +33,17 @@ const sampleQuestions: QuestionCategory[] = [
         {
                 category: "桃树病虫害",
                 questions: [
-                        "How to identify a sunflower?",
-                        "What are the characteristics of a rose?",
-                        "Can you help me identify this blue flower?"
+                        "桃树易感哪些病害？",
+                        "桃树红叶病怎么防治？",
+                        "桃树红叶病的症状是什么？",
                 ]
         },
         {
                 category: "其它示例",
                 questions: [
-                        "What does a barn swallow look like?",
-                        "How to distinguish between a crow and a raven?",
-                        "What's the habitat of the American robin?"
+                        "哪些作物易感星天牛？",
+                        "柑橘炭疽病的症状是什么？",
+                        "黑绒金龟子的形态特征是什么？"
                 ]
         }
 ];

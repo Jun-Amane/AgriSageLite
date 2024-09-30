@@ -135,6 +135,7 @@ export default function FAQ() {
                                                         sx={{ maxWidth: { sm: '100%', md: '70%' } }}
                                                 >
                                                         使用AgriSageLite进行分类非常简单。您只需上传作物的图片，并提供简短的文字描述（如病害症状、植株特征等信息）。我们的多模态分类系统将综合分析图像和文本信息，快速给出准确的分类结果和相应的农业信息。
+                                                        同时，可以使用AgriSageLite的知识图谱问答系统，直接输入您的农业相关问题。我们的智能问答系统基于丰富的农业知识图谱，为您提供准确、详细的回答。
                                                 </Typography>
                                         </AccordionDetails>
                                 </Accordion>

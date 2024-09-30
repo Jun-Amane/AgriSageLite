@@ -179,11 +179,10 @@ export default function Hero({ setHighlightClassification, classificationButtonR
                                                         width: { sm: '100%', md: '80%' },
                                                 }}
                                         >
-                                                AgriSageLite是一款革新性的农业分类系统，由自研的先进轻量级多模态深度学习模型Blend-CNN驱动。我们的系统巧妙地结合了图像和文本描述特征，实现了更全面、更精准的识别能力。这种多模态方法不仅提高了模型的识别精度，还增强了系统对复杂农业场景的理解能力。
+                                                AgriSageLite是一款革新性的农业分类系统，由自研的先进轻量级多模态深度学习模型Blend-CNN驱动。这种多模态方法不仅提高了模型的识别精度，还增强了系统对复杂农业场景的理解能力。
+                                                同时集成了基于农业知识图谱的智能问答模型。用户可以提出各种农业相关问题，系统将利用丰富的知识库提供准确、详细的回答。
                                                 作为一款轻量级解决方案，AgriSageLite在保持高精度的同时，大幅降低了内存占用和计算需求。这意味着它能够在各种设备上高效运行，从智能手机到田间的便携设备，都能实现快速、准确的实时分类。
-                                                <br />
-                                                我们的系统专为农民、研究人员和自然爱好者设计，提供植物疾病、花卉和鸟类的精准实时分类。借助强大而高效的AI技术，AgriSageLite能够快速识别各种农作物病害，帮助农民及时采取防治措施，同时精确分类各种花卉品种和鸟类，为生态研究和自然观察提供有力支持。
-                                                <br />
+
                                         </Typography>
                                         {/* 按钮 */}
                                         <Stack
@@ -206,8 +205,17 @@ export default function Hero({ setHighlightClassification, classificationButtonR
                                                         sx={{ textTransform: 'none' }}
                                                         onClick={handleExplore}
                                                 >
-                                                        开始使用AgriSageLite
+                                                        开始使用AgriSageLite分类
                                                 </Button>
+                                                <Link href="/chat" passHref>
+                                                        <Button
+                                                                variant="contained"
+                                                                color="primary"
+                                                                sx={{ textTransform: 'none' }}
+                                                        >
+                                                                开始使用知识图谱问答
+                                                        </Button>
+                                                </Link>
                                                 <Button
                                                         variant="contained"
                                                         color="primary"
