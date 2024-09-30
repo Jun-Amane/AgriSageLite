@@ -11,7 +11,6 @@ interface LogoInfo {
 const logos: LogoInfo[] = [
         { src: '/static/logo_coll/gnu.png', name: 'GNU' },
         { src: '/static/logo_coll/linux.png', name: 'Linux' },
-        // TODO: Relace with MariaDB?
         { src: '/static/logo_coll/mysql.png', name: 'MySQL' },
         { src: '/static/logo_coll/node.png', name: 'Node.js' },
         { src: '/static/logo_coll/python.png', name: 'Python' },

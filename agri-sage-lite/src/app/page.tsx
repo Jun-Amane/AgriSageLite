@@ -38,7 +38,6 @@ export default function Home() {
                         <OurTeam></OurTeam>
                         <Highlights></Highlights>
                         <DatasetShowcase></DatasetShowcase>
-                        { /* TODO: Add License Issue in FAQ & Footer */}
                         <FAQ></FAQ>
                         <Footer></Footer>
                 </Container>
